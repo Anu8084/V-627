@@ -21,7 +21,7 @@ app.use('/api', authRoutes);
 app.use('/api/student', studentRoutes);
 
 
-app.get('/test', (req, res) => {
+app.get('/', (req, res) => {
     res.status(200).send('✅ Backend is running successfully!');
   });
 
