@@ -18,7 +18,7 @@ const FacultyDashboard = () => {
 
   const fetchCertificates = async (category) => {
     try {
-      const response = await fetch('http://localhost:5000/api/student/faculty/certificates');
+      const response = await fetch('https://v-627.onrender.com/api/student/faculty/certificates');
       if (!response.ok) throw new Error('Failed to fetch certificates');
 
       const data = await response.json();
@@ -55,7 +55,7 @@ const FacultyDashboard = () => {
   const handleReject = async (certId) => {
     if (window.confirm("Are you sure you want to reject this certificate?")) {
       try {
-        const response = await fetch(`http://localhost:5000/api/student/faculty/certificates/${certId}/reject`, {
+        const response = await fetch(`https://v-627.onrender.com/api/student/faculty/certificates/${certId}/reject`, {
           method: 'PUT',
           headers: {
             'Content-Type': 'application/json'
@@ -78,7 +78,7 @@ const FacultyDashboard = () => {
 
   const handleApprove = async (certId) => {
     try {
-      const response = await fetch(`http://localhost:5000/api/student/faculty/certificates/${certId}/approve`, {
+      const response = await fetch(`https://v-627.onrender.com/api/student/faculty/certificates/${certId}/approve`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json'
@@ -110,7 +110,7 @@ const FacultyDashboard = () => {
     try {
       const certificateUrls = filteredCertificates.map(cert => cert.filePath);
       
-      const response = await fetch('http://localhost:5000/api/student/faculty/download-certificates', {
+      const response = await fetch('https://v-627.onrender.com/api/student/faculty/download-certificates', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -239,7 +239,7 @@ const FacultyDashboard = () => {
                   <td>{cert.phone}</td>
                   <td>{cert.studentEmail}</td>
                   <td>
-                    <a href={`http://localhost:5000/${cert.filePath}`} target="_blank" rel="noopener noreferrer">View</a>
+                    <a href={`https://v-627.onrender.com/${cert.filePath}`} target="_blank" rel="noopener noreferrer">View</a>
                   </td>
                   <td>{cert.status || "Pending"}</td>
                   <td>

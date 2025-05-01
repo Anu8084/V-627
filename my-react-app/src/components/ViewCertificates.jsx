@@ -22,7 +22,7 @@ const ViewCertificates = () => {
         return;
       }
 
-      const response = await fetch(`http://localhost:5000/api/student/certificates/${email}`);
+      const response = await fetch(`https://v-627.onrender.com/api/student/certificates/${email}`);
       if (!response.ok) throw new Error('Failed to fetch certificates.');
 
       const data = await response.json();
@@ -110,7 +110,7 @@ const ViewCertificates = () => {
                 <td>{cert.phone || 'N/A'}</td>
                 <td>{cert.studentEmail || 'N/A'}</td>
                 <td>
-                  <a href={`http://localhost:5000/${cert.filePath}`} target="_blank" rel="noopener noreferrer">
+                  <a href={`https://v-627.onrender.com/${cert.filePath}`} target="_blank" rel="noopener noreferrer">
                     View
                   </a>
                 </td>

@@ -24,7 +24,7 @@ const StudentDashboard = () => {
           return;
         }
 
-        const response = await fetch(`http://localhost:5000/api/student/details/${email}`, {
+        const response = await fetch(`https://v-627.onrender.com/api/student/details/${email}`, {
           method: 'GET',
           headers: { 'Content-Type': 'application/json' },
         });
@@ -48,7 +48,7 @@ const StudentDashboard = () => {
   const handleSaveChanges = async () => {
     try {
       const email = localStorage.getItem('studentEmail');
-      const response = await fetch('http://localhost:5000/api/student/update-details', {
+      const response = await fetch('https://v-627.onrender.com/api/student/update-details', {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
