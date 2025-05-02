@@ -12,12 +12,7 @@ const app = express();
 connectDB();
 
 // Middleware
-app.use(cors({
-  origin: 'https://topper-veda.onrender.com',
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  credentials: true 
-  // flase
-}));
+app.use(cors());
 
 app.use(express.json());
 app.use('/uploads', express.static('uploads'));
